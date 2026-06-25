@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>华体会 · 知识库查询入口</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf8f5;
+      font-family: 'Georgia', 'Times New Roman', '宋体', 'Songti SC', serif;
+      color: #2c3e4f;
+      line-height: 1.7;
+      padding: 1.5rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page-wrapper {
+      max-width: 880px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid #d4cdc2;
+      padding-bottom: 1.2rem;
+    }
+
+    .site-title {
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #2a3b4b;
+    }
+
+    .site-title a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .site-title a:hover {
+      border-bottom-color: #9b8c7a;
+    }
+
+    .hero-note {
+      margin: 2.5rem 0 2rem 0;
+      background: #f2ede6;
+      padding: 1.5rem 2rem;
+      border-left: 6px solid #a08973;
+      font-size: 1.05rem;
+      color: #3a4a55;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .hero-note p:first-child {
+      font-weight: 500;
+    }
+
+    .section-head {
+      font-size: 1.3rem;
+      font-weight: 400;
+      border-bottom: 1px dashed #b9ae9e;
+      padding-bottom: 0.3rem;
+      margin: 2.5rem 0 1.2rem 0;
+      color: #2f4050;
+      letter-spacing: 1px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 1.2rem 0 1.8rem 0;
+    }
+
+    .card {
+      background: #fffffffa;
+      border: 1px solid #e0d7cc;
+      border-radius: 10px;
+      padding: 1.4rem 1.5rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: #374c5c;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #4e5f6b;
+    }
+
+    .info-block {
+      background: #ede8e0;
+      padding: 1.4rem 2rem;
+      border-radius: 10px;
+      margin: 1.8rem 0;
+      border: 1px solid #d9cfc0;
+    }
+
+    .info-block strong {
+      color: #2e4457;
+      font-weight: 600;
+    }
+
+    .tip-box {
+      background: #f4f0ea;
+      border: 1px solid #cdc2b3;
+      border-left: 5px solid #7c8a7c;
+      padding: 1.2rem 1.8rem;
+      border-radius: 0 10px 10px 0;
+      margin: 1.5rem 0 2rem 0;
+      font-size: 0.95rem;
+      color: #3b4c57;
+    }
+
+    .tip-box::before {
+      content: "💡 查阅提示";
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      color: #3a5a4a;
+    }
+
+    .faq-mini {
+      margin: 2rem 0 2.5rem 0;
+    }
+
+    .faq-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #e1d7cb;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #314a5a;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      color: #4d6270;
+      font-size: 0.95rem;
+      padding-left: 0.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d8cec1;
+      margin: 2rem 0 0.2rem 0;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding: 1rem 0 0.5rem 0;
+      font-size: 0.85rem;
+      color: #6b7b85;
+      border-top: 1px solid #d4cbbf;
+      text-align: left;
+    }
+
+    @media (max-width: 640px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      body {
+        padding: 1rem;
+      }
+      .hero-note {
+        padding: 1.2rem 1.2rem;
+      }
+      .info-block {
+        padding: 1rem 1.2rem;
+      }
+      .site-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <header>
+    <div class="site-title">
+      <a href="https://hthmore.com.cn">华体会</a> · 知识速查库
+    </div>
+    <div style="font-size: 0.9rem; color: #607482; margin-top: 0.2rem;">
+      日常查询 · 对照阅读 · 延伸参考
+    </div>
+  </header>
+
+  <div class="hero-note">
+    <p>本页面为知识库入口式索引，围绕「华体会」聚合常见查询场景、对照信息与延伸资料。</p>
+    <p style="margin-top: 0.5rem;">适用于日常检索、信息核验与主题阅读辅助，内容保持平实可靠。</p>
+  </div>
+
+  <div class="section-head">📋 常见查询场景</div>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3>信息对照</h3>
+      <p>需要比对不同来源或时间段的数据、表述、条目时，可在此处建立对照参考。保持条目清晰，避免混淆。</p>
+    </div>
+    <div class="card">
+      <h3>延伸阅读</h3>
+      <p>围绕基础条目查找相关背景、术语解释或上下文关联内容，便于理解整体脉络，减少反复跳转。</p>
+    </div>
+    <div class="card">
+      <h3>日常速查</h3>
+      <p>高频问题、常见定义、标准说明——集中摘录，降低重复搜索成本。适用于定期查阅或备忘。</p>
+    </div>
+    <div class="card">
+      <h3>条目索引</h3>
+      <p>按类别或首字母整理的词条列表，方便快速定位目标内容，尤其适合多条目交叉对比时使用。</p>
+    </div>
+  </div>
+
+  <div class="section-head">📖 说明区</div>
+  <div class="info-block">
+    <p>本知识库以整理和归纳为基本方式，所有条目均基于可查证的信息来源。页面内引用的内容仅用于知识展示与辅助理解，不构成立场或建议。</p>
+    <p style="margin-top: 0.6rem;">如需进一步查阅完整信息或获取最新动态，可访问 <a href="https://hthmore.com.cn" style="color: #2a5c6e; text-decoration: underline; text-underline-offset: 3px;">华体会</a> 相关内容板块进行延伸浏览。</p>
+  </div>
+
+  <div class="tip-box">
+    当你在不同页面之间切换时，建议保持至少一个参考标签页打开，以便随时对照。本库不做实时更新承诺，关键信息请以官方或最新来源为准。
+  </div>
+
+  <div class="section-head">❓ 常见问题摘要</div>
+  <div class="faq-mini">
+    <div class="faq-item">
+      <div class="faq-q">Q：部分条目与之前看到的不一致，怎么办？</div>
+      <div class="faq-a">知识库会定期根据公开信息做修订。如发现差异，建议以多个来源比对后自行判断。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q：能否直接复制内容用于外部发布？</div>
+      <div class="faq-a">本页面内容仅供个人学习参考。如需引用或转载，请标注来源并尊重原出处。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Q：如何快速定位某个具体条目？</div>
+      <div class="faq-a">可使用浏览器页面查找（Ctrl+F）直接搜索关键词。后续版本可能加入锚点导航功能。</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>知识库索引 · 内容仅供参考 · 最终解释以实际来源为准</p>
+    <p style="margin-top: 0.2rem;">页面更新：不定期修订 | 主题：华体会 · 查询与对照</p>
+  </footer>
+</div>
+</body>
+</html>
